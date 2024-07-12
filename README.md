@@ -2,7 +2,12 @@
 
 [참고영상](https://youtu.be/I0BOUiFe9WY?si=E-3nmiuc-O1Zuyz5)
 
-1:20:50초까지 완료함
+3:07:14까지 완료함
 # 설치
 ```
+git clone https://github.com/safak/next-ecommerce.git
+
+npm install @wix/stores @wix/sdk
+npm i js-cookie
+npm i isomorphic-dompurify
 ```
