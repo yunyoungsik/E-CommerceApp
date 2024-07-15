@@ -7,7 +7,15 @@
 ```
 git clone https://github.com/safak/next-ecommerce.git
 
-npm install @wix/stores @wix/sdk
 npm i js-cookie
 npm i isomorphic-dompurify
+npm i zustand
+npm i react-confetti
+npm i timeago.js
+
+<!-- wix -->
+npm install @wix/stores @wix/sdk
+npm install @wix/ecom
+npm i @wix/redirects
+npm i @wix/members
 ```

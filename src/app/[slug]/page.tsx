@@ -1,8 +1,11 @@
 import Add from '@/components/Add';
 import CustomizeProducts from '@/components/CustomizeProducts';
+import ProductDescription from '@/components/ProductDescription';
 import ProductImages from '@/components/ProductImages';
+import Reviews from '@/components/Reviews';
 import { wixClientServer } from '@/lib/wixClientServer';
 import { notFound } from 'next/navigation';
+import { Suspense } from 'react';
 
 const SinglePage = async ({ params }: { params: { slug: string } }) => {
   const wixClient = await wixClientServer();
@@ -25,17 +28,18 @@ const SinglePage = async ({ params }: { params: { slug: string } }) => {
       <div className="w-full lg:w-1/2 flex flex-col gap-6">
         <h1 className="text-4xl font-medium">{product.name}</h1>
 
-        <p className="text-gray-500">{product.description}</p>
+        {/* <p className="text-gray-500">{product.description}</p> */}
+        <ProductDescription description={product.description || ''} />
 
         <div className="h-[2px] bg-gray-100" />
 
         <div className="flex items-center gap-4">
           {product.price?.price === product.price?.discountedPrice ? (
-            <h2 className="font-medium text-2xl">${product.price?.price}</h2>
+            <h2 className="font-medium text-2xl">₩{product.price?.price}</h2>
           ) : (
             <>
-              <h3 className="text-xl text-gray-500 line-through">${product.price?.price}</h3>
-              <h2 className="font-medium text-2xl">${product.price?.discountedPrice}</h2>
+              <h3 className="text-xl text-gray-500 line-through">₩{product.price?.price}</h3>
+              <h2 className="font-medium text-2xl">₩{product.price?.discountedPrice}</h2>
             </>
           )}
         </div>
@@ -65,6 +69,14 @@ const SinglePage = async ({ params }: { params: { slug: string } }) => {
               <p>{section.description}</p>
             </div>
           ))}
+
+        <div className="h-[2px] bg-gray-100" />
+
+        {/* reviews */}
+        <h1 className='text-2xl'>User Reviews</h1>
+        <Suspense fallback="Loading...">
+          <Reviews productId={product._id!} />
+        </Suspense>
       </div>
     </div>
   );
