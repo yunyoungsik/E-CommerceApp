@@ -1,4 +1,5 @@
 # E-commerce App
+<img width="100%" src="https://github.com/yunyoungsik/Next.js_Portfolio/blob/main/public/thumnail.png?raw=true" />    
 
 [참고영상](https://youtu.be/I0BOUiFe9WY?si=E-3nmiuc-O1Zuyz5)
 
