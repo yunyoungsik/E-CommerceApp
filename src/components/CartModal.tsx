@@ -93,7 +93,7 @@ const CartModal = () => {
           <div>
             <div className="flex items-center justify-between font-semibold">
               <span>Subtotal</span>
-              <span>₩{cart.subtotal.amount}</span>
+              <span>₩{cart.subtotal?.amount || 0}</span>
             </div>
 
             <p className="text-gray-500 text-sm mt-2 mb-4">

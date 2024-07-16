@@ -8,6 +8,7 @@
 git clone https://github.com/safak/next-ecommerce.git
 
 npm i js-cookie
+npm install --save-dev @types/js-cookie
 npm i isomorphic-dompurify
 npm i zustand
 npm i react-confetti
